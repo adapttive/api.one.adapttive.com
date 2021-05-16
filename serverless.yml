@@ -1,0 +1,36 @@
+org: adapttive
+app: preview
+service: preview
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: go1.x
+  lambdaHashingVersion: 20201221
+
+
+package:
+  patterns:
+    - ./bin/**
+
+functions:
+  ping:
+    handler: bin/ping
+    events:
+      - http:
+          path: /ping
+          method: get
+          cors: true
+  preview:
+    handler: bin/preview
+    events:
+      - http:
+          path: /preview
+          cors: true
+          method: post
+          request:
+            template:
+              application/x-www-form-urlencoded: '{"body" : "$input.body"}'
+
+
