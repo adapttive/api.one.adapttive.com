@@ -14,3 +14,13 @@ Serverless API for link preview
 - Deploy
 
     `serverless deploy`
+
+# Endpoints
+
+- Ping
+
+    `https://api.one.adapttive.com/ping/`
+
+- Preview
+
+    `https://api.one.adapttive.com/preview/`
