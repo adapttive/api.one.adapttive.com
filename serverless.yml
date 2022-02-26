@@ -2,7 +2,7 @@ org: adapttive
 app: preview
 service: preview
 
-frameworkVersion: '2'
+frameworkVersion: '3'
 
 provider:
   name: aws
@@ -12,7 +12,8 @@ provider:
 
 package:
   patterns:
-    - ./bin/**
+    - bin/ping
+    - bin/preview
 
 functions:
   ping:
@@ -21,13 +22,15 @@ functions:
       - http:
           path: /ping
           method: get
-          cors: true
+          cors:
+            origin: '*'
   preview:
     handler: bin/preview
     events:
       - http:
           path: /preview
-          cors: true
+          cors:
+            origin: '*'
           method: post
           request:
             template:

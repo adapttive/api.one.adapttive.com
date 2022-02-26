@@ -2,32 +2,74 @@
 
 
 [[projects]]
+  digest = "1:659451ee49640f3ec7ecc30cfc64aa7104241c9b93d96848cc1eae025d891f8b"
   name = "github.com/aws/aws-lambda-go"
-  packages = ["events","lambda","lambda/handlertrace","lambda/messages","lambdacontext"]
+  packages = [
+    "events",
+    "lambda",
+    "lambda/handlertrace",
+    "lambda/messages",
+    "lambdacontext",
+  ]
+  pruneopts = ""
   revision = "b3dd246b7d83fd62856549646711e5328075c69a"
   version = "v1.22.0"
 
 [[projects]]
+  digest = "1:e29811535070a766e1a2f174fa83071a72009c30d2e985f5f2564611457b8788"
   name = "github.com/badoux/goscraper"
   packages = ["."]
+  pruneopts = ""
   revision = "9b4686c4b62c22b0489d53dddf5421605caba33e"
   version = "v1"
 
 [[projects]]
   branch = "master"
+  digest = "1:3342566a00f8c64d2a986d88be4c9c4cca8df6c473c2934d56080922b189aba8"
   name = "golang.org/x/net"
-  packages = ["html","html/atom","html/charset"]
+  packages = [
+    "html",
+    "html/atom",
+    "html/charset",
+  ]
+  pruneopts = ""
   revision = "89ef3d95e781148a0951956029c92a211477f7f9"
 
 [[projects]]
+  digest = "1:fbf4ce886fca533792ff7aa7be5df3f473dd2e6d0fdebcf0b78df8fd6f666d50"
   name = "golang.org/x/text"
-  packages = ["encoding","encoding/charmap","encoding/htmlindex","encoding/internal","encoding/internal/identifier","encoding/japanese","encoding/korean","encoding/simplifiedchinese","encoding/traditionalchinese","encoding/unicode","internal/gen","internal/language","internal/language/compact","internal/tag","internal/utf8internal","language","runes","transform","unicode/cldr"]
+  packages = [
+    "encoding",
+    "encoding/charmap",
+    "encoding/htmlindex",
+    "encoding/internal",
+    "encoding/internal/identifier",
+    "encoding/japanese",
+    "encoding/korean",
+    "encoding/simplifiedchinese",
+    "encoding/traditionalchinese",
+    "encoding/unicode",
+    "internal/gen",
+    "internal/language",
+    "internal/language/compact",
+    "internal/tag",
+    "internal/utf8internal",
+    "language",
+    "runes",
+    "transform",
+    "unicode/cldr",
+  ]
+  pruneopts = ""
   revision = "e328d63cff14134669501e0e154e4f141c784322"
   version = "v0.3.6"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "54d050a63cdc29bb02e9bc1d242bb24479de9a4d22b644a83429f1ac6040df1c"
+  input-imports = [
+    "github.com/aws/aws-lambda-go/events",
+    "github.com/aws/aws-lambda-go/lambda",
+    "github.com/badoux/goscraper",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1

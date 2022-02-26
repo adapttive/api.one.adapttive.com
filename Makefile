@@ -2,8 +2,8 @@
 
 build:
 	dep ensure -v
-	env GOOS=linux go build -ldflags="-s -w" -o bin/ping ping/main.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/preview preview/main.go
+	env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -v -ldflags "-d -s -w" -a -tags netgo -installsuffix netgo -o bin/ping ping/main.go
+	env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -v -ldflags "-d -s -w" -a -tags netgo -installsuffix netgo -o bin/preview preview/main.go
 
 clean:
 	rm -rf ./bin ./vendor Gopkg.lock

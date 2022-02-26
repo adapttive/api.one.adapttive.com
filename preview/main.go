@@ -29,18 +29,18 @@ type Request events.APIGatewayProxyRequest
 // Handler is our lambda handler invoked by the `lambda.Start` function call
 func Handler(ctx context.Context, request Request) (Response, error) {
 	body, err := url.ParseQuery(request.Body)
-	scapUrl := ""
+	scrapUrl := ""
 	if err != nil {
 		return Response{StatusCode: 404}, err
-        } else {
-	   scapUrl = body["url"][0]	
-        }
+    } else {
+      scrapUrl = body["url"][0]
+    }
 
-	if len(scapUrl) == 0 {
+	if len(scrapUrl) == 0 {
 		return Response{StatusCode: 404}, nil
 	}
 
-	s, err := goscraper.Scrape(scapUrl, 5)
+	s, err := goscraper.Scrape(scrapUrl, 5)
 	if err != nil {
 	    return Response{StatusCode: 404}, err
 	}
@@ -59,7 +59,7 @@ func Handler(ctx context.Context, request Request) (Response, error) {
 		IsBase64Encoded: false,
 		Body:            string(result),
 		Headers: map[string]string{
-			"Content-Type":           "application/json",
+			"Content-Type": "application/json",
 			"Access-Control-Allow-Origin": "*",
 			"Access-Control-Allow-Credentials": "true",
 		},

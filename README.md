@@ -3,17 +3,27 @@ Serverless API for link preview
 
 # Installation
 
-- Install Serverless Framework
+- Install Go Lang
 
-    `npm install -g serverless`
+    `sudo apt-get install golang`
+
+- Place the project inside `\home\<user>\go\src\<project>`
 
 - Build Go Lambda functions
 
     `make`
 
+- Install Serverless Framework
+
+  `npm install -g serverless`
+
+- Login (one time)
+
+    `serverless login`
+
 - Deploy
 
-    `serverless deploy`
+    `serverless deploy --verbose`
 
 # Endpoints
 
